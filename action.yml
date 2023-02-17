@@ -71,6 +71,8 @@ runs:
         if [[ "${{ inputs.phpunit_fail_on_warning }}" == "true" ]]; then
           PHPUNIT_OPTIONS="$PHPUNIT_OPTIONS --fail-on-warning"
         fi
+        echo vendor/bin/phpunit $PHPUNIT_OPTIONS
+        vendor/bin/phpunit --help
         vendor/bin/phpunit $PHPUNIT_OPTIONS
         echo "Passed"
 
